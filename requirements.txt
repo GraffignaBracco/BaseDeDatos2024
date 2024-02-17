@@ -1,0 +1,8 @@
+boto3
+jupyter
+pandas
+duckdb
+dbt-core
+dbt-duckdb
+psycopg2-binary
+dbt-postgres
