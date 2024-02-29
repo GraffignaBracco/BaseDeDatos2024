@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  db:
+    image: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: gtfs
+    volumes:
+      - ./Data/feed-gtfs:/feed-gtfs
+     # - ./inicializacion/gtfs_schema.sql:/docker-entrypoint-initdb.d/1-schema.sql
+     # - ./load_gtfs_data.sql:/docker-entrypoint-initdb.d/2-load_data.sql
+    ports:
+      - 5432:5432
