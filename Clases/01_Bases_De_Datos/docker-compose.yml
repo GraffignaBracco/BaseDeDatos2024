@@ -30,19 +30,6 @@ services:
     networks:
       - mynetwork
 
-  mageai:
-    image: mageai/mageai:latest
-    depends_on:
-      - db
-    ports:
-      - "8501:8501" # Asumiendo que el servicio expone el puerto 8501, ajusta según necesites
-    networks:
-      - mynetwork
-    environment:
-      DATABASE_URL: "postgresql://postgres:1234@db/gtfs"
-    volumes:
-      - ./data/mageai:/data # Ajusta el volumen para almacenar o acceder a datos específicos si es necesario
-
 volumes:
   pgadmin_data:
 

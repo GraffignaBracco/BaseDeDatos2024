@@ -7,3 +7,4 @@ dbt-duckdb
 psycopg2-binary
 dbt-postgres
 pyarrow
+sqlalchemy

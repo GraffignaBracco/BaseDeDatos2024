@@ -30,7 +30,9 @@ CREATE TABLE shapes (
     shape_pt_sequence INT,
     shape_dist_traveled NUMERIC,
     PRIMARY KEY (shape_id, shape_pt_sequence)
+
 );
+
 
 CREATE TABLE stops (
     stop_id TEXT PRIMARY KEY,
@@ -52,9 +54,10 @@ CREATE TABLE stop_times (
     FOREIGN KEY (stop_id) REFERENCES stops(stop_id)
 );
 
+
 CREATE TABLE trips (
     route_id TEXT,
-    service_id INT,
+    service_id TEXT,
     trip_id TEXT PRIMARY KEY,
     trip_headsign TEXT,
     trip_short_name TEXT,
@@ -62,6 +65,5 @@ CREATE TABLE trips (
     block_id TEXT,
     shape_id TEXT,
     exceptional INT,
-    FOREIGN KEY (route_id) REFERENCES routes(route_id),
-    FOREIGN KEY (shape_id) REFERENCES shapes(shape_id)
+    FOREIGN KEY (route_id) REFERENCES routes(route_id) -- Referencia compuesta
 );
