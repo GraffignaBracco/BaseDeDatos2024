@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   db:
     image: postgres
@@ -9,8 +7,7 @@ services:
       POSTGRES_DB: gtfs
     volumes:
       - ./data/feed-gtfs:/feed-gtfs
-      - ./inicializacion/gtfs_schema.sql:/docker-entrypoint-initdb.d/1-schema.sql
-      - ./load_gtfs_data.sql:/docker-entrypoint-initdb.d/2-load_data.sql
+      - ./docker-entrypoint-initdb:/docker-entrypoint-initdb.d
     ports:
       - "5432:5432"
     networks:
@@ -21,6 +18,7 @@ services:
     environment:
       PGADMIN_DEFAULT_EMAIL: user@example.com
       PGADMIN_DEFAULT_PASSWORD: admin
+
     ports:
       - "8081:80"
     depends_on:
