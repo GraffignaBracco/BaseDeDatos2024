@@ -9,7 +9,7 @@ services:
 
     volumes:
       - ./data/feed-gtfs:/feed-gtfs
-      - ./docker-entrypoint-initdb:/docker-entrypoint-initdb.d
+      # - ./docker-entrypoint-initdb:/docker-entrypoint-initdb.d
     ports:
       - "5432:5432"
     networks:
