@@ -12,6 +12,8 @@ ipykernel = "^6.29.5"
 python-dotenv = "^1.0.1"
 pandas = "^2.2.3"
 numpy = "^2.1.1"
+sqlalchemy = "^2.0.35"
+psycopg2-binary = "^2.9.9"
 
 
 [build-system]

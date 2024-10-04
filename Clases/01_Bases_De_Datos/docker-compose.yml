@@ -1,10 +1,12 @@
 services:
   db:
-    image: postgres
+    image: postgres:16
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 1234
       POSTGRES_DB: gtfs
+      POSTGRES_MAX_WAL_SIZE: 1GB  # Configuración para aumentar el tamaño máximo del WAL
+
     volumes:
       - ./data/feed-gtfs:/feed-gtfs
       - ./docker-entrypoint-initdb:/docker-entrypoint-initdb.d

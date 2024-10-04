@@ -1,5 +1,5 @@
 CREATE TABLE agency (
-    agency_id TEXT PRIMARY KEY,
+    agency_id TEXT, -- PRIMARY KEY,
     agency_name TEXT,
     agency_url TEXT,
     agency_timezone TEXT,
@@ -8,19 +8,19 @@ CREATE TABLE agency (
 );
 
 CREATE TABLE calendar_dates (
-    service_id INT PRIMARY KEY,
+    service_id INT, -- PRIMARY KEY,
     date DATE,
     exception_type INT
 );
 
 CREATE TABLE routes (
-    route_id TEXT PRIMARY KEY,
+    route_id TEXT, -- PRIMARY KEY,
     agency_id TEXT,
     route_short_name TEXT,
     route_long_name TEXT,
     route_desc TEXT,
-    route_type INT,
-    FOREIGN KEY (agency_id) REFERENCES agency(agency_id)
+    route_type INT --,
+    --FOREIGN KEY (agency_id) REFERENCES agency(agency_id)
 );
 
 CREATE TABLE shapes (
@@ -28,14 +28,14 @@ CREATE TABLE shapes (
     shape_pt_lat NUMERIC,
     shape_pt_lon NUMERIC,
     shape_pt_sequence INT,
-    shape_dist_traveled NUMERIC,
-    PRIMARY KEY (shape_id, shape_pt_sequence)
+    shape_dist_traveled NUMERIC --,
+    --PRIMARY KEY (shape_id, shape_pt_sequence)
 
 );
 
 
 CREATE TABLE stops (
-    stop_id TEXT PRIMARY KEY,
+    stop_id TEXT, -- PRIMARY KEY,
     stop_code TEXT,
     stop_name TEXT,
     stop_lat NUMERIC,
@@ -49,21 +49,20 @@ CREATE TABLE stop_times (
     stop_id TEXT,
     stop_sequence INT,
     timepoint INT,
-    shape_dist_traveled NUMERIC,
-    PRIMARY KEY (trip_id, stop_sequence),
-    FOREIGN KEY (stop_id) REFERENCES stops(stop_id)
+    shape_dist_traveled NUMERIC --,
+    --PRIMARY KEY (trip_id, stop_sequence)
 );
 
 
 CREATE TABLE trips (
     route_id TEXT,
     service_id TEXT,
-    trip_id TEXT PRIMARY KEY,
+    trip_id TEXT, -- PRIMARY KEY,
     trip_headsign TEXT,
     trip_short_name TEXT,
     direction_id INT,
     block_id TEXT,
     shape_id TEXT,
-    exceptional INT,
-    FOREIGN KEY (route_id) REFERENCES routes(route_id) -- Referencia compuesta
+    exceptional INT --,
+    --FOREIGN KEY (route_id) REFERENCES routes(route_id) -- Referencia compuesta
 );
