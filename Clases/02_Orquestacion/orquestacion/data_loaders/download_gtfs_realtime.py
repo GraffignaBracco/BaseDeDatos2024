@@ -139,8 +139,10 @@ def load_data_from_api(*args, **kwargs):
     """
     Template for loading data from API
     """
-    client_id = '46ca3fbfd5984ba8aa6a39cc165e43d1'
-    client_secret = '621C7e8e3bdf41bC99095408AD1878F4'
+    # client_id = '46ca3fbfd5984ba8aa6a39cc165e43d1'
+    # client_secret = '621C7e8e3bdf41bC99095408AD1878F4'
+    client_id     = '3e72d2097b8840c88e8cf32b88755e23'
+    client_secret = 'cA3c7C7F9d894eD4AC77da761287d70E'
     vehpo, tripup = asyncio.run(main(client_id, client_secret))
 
     

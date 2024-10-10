@@ -16,17 +16,16 @@ def export_data_to_postgres(df: DataFrame, **kwargs) -> None:
 
     Docs: https://docs.mage.ai/design/data-loading#postgresql
     """
-    schema_name = 'realtime'  # Specify the name of the schema to export data to
-    table_name = 'positions'  # Specify the name of the table to export data to
+    schema_name = 'gtfs'  # Specify the name of the schema to export data to
+    table_name = 'trips'  # Specify the name of the table to export data to
     config_path = path.join(get_repo_path(), 'io_config.yaml')
     config_profile = 'dev'
 
-
     with Postgres.with_config(ConfigFileLoader(config_path, config_profile)) as loader:
         loader.export(
-            df[0],
+            df,
             schema_name,
             table_name,
             index=False,  # Specifies whether to include index in exported table
-            if_exists='append',  # Specify resolution policy if table name already exists
+            if_exists='replace',  # Specify resolution policy if table name already exists
         )

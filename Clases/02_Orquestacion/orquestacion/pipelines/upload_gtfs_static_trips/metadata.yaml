@@ -1,23 +1,20 @@
 blocks:
 - all_upstream_blocks_executed: true
   color: null
-  configuration:
-    file_path: data_loaders/load_gtfs_static_agency.py
-    file_source:
-      path: data_loaders/load_gtfs_static_agency.py
+  configuration: {}
   downstream_blocks:
-  - upload_agency
+  - upload_trips
   executor_config: null
   executor_type: local_python
   has_callback: false
   language: python
-  name: load_gtfs_static_agency
+  name: load_trips
   retry_config: null
   status: executed
   timeout: null
   type: data_loader
   upstream_blocks: []
-  uuid: load_gtfs_static_agency
+  uuid: load_trips
 - all_upstream_blocks_executed: true
   color: null
   configuration: {}
@@ -26,26 +23,26 @@ blocks:
   executor_type: local_python
   has_callback: false
   language: python
-  name: upload_agency
+  name: upload_trips
   retry_config: null
-  status: executed
+  status: updated
   timeout: null
   type: data_exporter
   upstream_blocks:
-  - load_gtfs_static_agency
-  uuid: upload_agency
+  - load_trips
+  uuid: upload_trips
 cache_block_output_in_memory: false
 callbacks: []
 concurrency_config: {}
 conditionals: []
-created_at: '2024-10-10 04:10:40.383038+00:00'
+created_at: '2024-10-10 18:21:39.077070+00:00'
 data_integration: null
 description: null
 executor_config: {}
 executor_count: 1
 executor_type: null
 extensions: {}
-name: upload_gtfs_static
+name: upload_gtfs_static_trips
 notification_config: {}
 remote_variables_dir: null
 retry_config: {}
@@ -55,6 +52,6 @@ settings:
 spark_config: {}
 tags: []
 type: python
-uuid: upload_gtfs_static
+uuid: upload_gtfs_static_trips
 variables_dir: /home/src/mage_data/orquestacion
 widgets: []
