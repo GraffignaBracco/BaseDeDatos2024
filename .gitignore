@@ -161,3 +161,5 @@ cython_debug/
 
 Clases/01_Bases_De_Datos/data/*
 Clases/01_Bases_De_Datos/data/feed_gtfs_buenosaires.zip
+Clases/02_Orquestacion/feed-gtfs/*
+Clases/02_Orquestacion/mage_data/*
