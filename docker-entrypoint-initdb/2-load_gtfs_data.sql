@@ -1,4 +1,4 @@
-\set ON_ERROR_STOP on
+{# \set ON_ERROR_STOP on
 
 COPY agency(agency_id, agency_name, agency_url, agency_timezone, agency_lang, agency_phone)
 FROM '/feed-gtfs/agency.csv' DELIMITER ',' CSV HEADER ENCODING 'UTF8';
@@ -19,4 +19,4 @@ COPY stop_times(trip_id, arrival_time, departure_time, stop_id, stop_sequence, t
 FROM '/feed-gtfs/stop_times.csv' DELIMITER ',' CSV HEADER ENCODING 'UTF8';
 
 COPY calendar_dates(service_id, date, exception_type)
-FROM '/feed-gtfs/calendar_dates.csv' DELIMITER ',' CSV HEADER ENCODING 'UTF8';
+FROM '/feed-gtfs/calendar_dates.csv' DELIMITER ',' CSV HEADER ENCODING 'UTF8'; #}

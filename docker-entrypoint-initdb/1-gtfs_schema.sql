@@ -1,4 +1,4 @@
-CREATE TABLE agency (
+{# CREATE TABLE agency (
     agency_id TEXT, -- PRIMARY KEY,
     agency_name TEXT,
     agency_url TEXT,
@@ -65,4 +65,4 @@ CREATE TABLE trips (
     shape_id TEXT,
     exceptional INT --,
     --FOREIGN KEY (route_id) REFERENCES routes(route_id) -- Referencia compuesta
-);
+); #}
