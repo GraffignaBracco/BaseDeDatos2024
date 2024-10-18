@@ -53,18 +53,18 @@ BaseDeDatos2024
 ## 1° Paso: Clonar el repositorio
  Ir al Repositorio de GitHub:
  
- ![alt text](image.png)
+ ![alt text](images/image.png)
 
 Ir a "Branch"
 
-![alt text](image-1.png)
+![alt text](images/image-1.png)
 
 Crear una nueva Branch con su nombre
 
-![alt text](image-2.png)
+![alt text](images/image-2.png)
 
 
-![alt text](image-3.png)
+![alt text](images/image-3.png)
 
 Clonar el repositorio con
 
@@ -74,7 +74,7 @@ git clone https://github.com/GraffignaBracco/BaseDeDatos2024.git
 
 Cambiar a la branch que crearon:
 
-![alt text](image-5.png)
+![alt text](images/image-5.png)
 
 
 ## 2° Paso: Crear un Ambiente de python para poder usar las librerías necesarias.
@@ -132,41 +132,32 @@ python -m ipykernel install --user --name=base_de_datos --display-name "Python (
 ```
 
 
+## 3° Paso: Copiar el archivo .env.example y cambiarle el nombre a ".env"
 
-Luego abrir el jupyter notebook `Ejercicio_Clase1.ipynb` y poner "Seleccionar Kernel" En la parte superior Derecha.
+```yaml
+PROJECT_NAME=gtfs
+POSTGRES_DBNAME=gtfs
+POSTGRES_SCHEMA=public
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=1234
+POSTGRES_PORT=5432
+POSTGRES_HOST=postgres
+```
 
-![image-2.png](attachment:image-2.png)
+Modificar cualquier variable de entorno (Por ejemplo, cambiar el nombre del proyecto)
 
-Luego seleccionar el kernel creado 
+## 4° Paso: Levantar los servicios de Docker:
 
-![image.png](attachment:image.png)
+Abrir la aplicación "Docker Desktop" en sus computadoras y asegurarse que el "Docker Engine" esté corriendo.
 
-A veces el Kernel demora en aparecer en esta lista de opciones. Por ahí funciona reiniciar VS Code y volver a probar
+Construir la imagen de Mage
 
+```bash
+docker compose build
+```
 
-# Docker Test
-docker run hello-world
-(Tiene que aparecer:
-"Hello from Docker!
-This message shows that your installation appears to be working correctly." )
+Levantar los contenedores:
 
-docker run -it python:3.9
-
-
-cd Clases\01
-docker build -t test .
-docker run -it test
-
-
-# Postgres
-docker-compose up
-(Después de abrir docker desktop y powershell como administrador)
-
-Acceder al docker compose
-docker exec -it basededatos2024-db-1 psql -U postgres -d gtfs
-
-Para debuguear si hay algún error
-docker logs basededatos2024-db-1
-
-
-
+```bash
+docker compose up
+```
