@@ -50,9 +50,35 @@ BaseDeDatos2024
 ├── pyproject.toml  
 ├── requirements.txt  
 
-##
+## 1° Paso: Clonar el repositorio
+ Ir al Repositorio de GitHub:
+ 
+ ![alt text](image.png)
+
+Ir a "Branch"
+
+![alt text](image-1.png)
+
+Crear una nueva Branch con su nombre
+
+![alt text](image-2.png)
+
+
+![alt text](image-3.png)
+
+Clonar el repositorio con
+
+```bash
+git clone https://github.com/GraffignaBracco/BaseDeDatos2024.git
+```
+
+Cambiar a la branch que crearon:
+
+![alt text](image-5.png)
+
 
 ## 2° Paso: Crear un Ambiente de python para poder usar las librerías necesarias.
+
 
 Lo primero que hay que hacer es "ir" con la terminal hasta la carpeta del Repositorio. Esto se hace con este comando desde la misma terminal de VSCode:
 
@@ -105,6 +131,8 @@ Para crear un kernel en Jupyter vinculado a este entorno de Poetry, ejecuta el s
 python -m ipykernel install --user --name=base_de_datos --display-name "Python (base_de_datos)"
 ```
 
+
+
 Luego abrir el jupyter notebook `Ejercicio_Clase1.ipynb` y poner "Seleccionar Kernel" En la parte superior Derecha.
 
 ![image-2.png](attachment:image-2.png)
@@ -140,16 +168,5 @@ docker exec -it basededatos2024-db-1 psql -U postgres -d gtfs
 Para debuguear si hay algún error
 docker logs basededatos2024-db-1
 
-## 1° Paso: Clonar el repositorio con GIT (Si todavía no lo tenían clonado, si ya lo hicieron en la clase, saltearse esto)
-
-### Abrir VS Code y poner "Clone Git Repository"
-
-![image.png](attachment:image.png)  
-
-### Luego copiar y pegar la URL del repósitorio `https://github.com/GraffignaBracco/BaseDeDatos2024.git` y seleccionar "Clone From URL"
-
-![image-2.png](attachment:image-2.png)
-
-### Seleccionar una carpeta donde se quiera descargar el repositorio
 
 
