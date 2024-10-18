@@ -8,3 +8,9 @@ psycopg2-binary
 dbt-postgres
 pyarrow
 sqlalchemy
+gtfs-realtime-bindings
+dlt
+jupyter
+ipykernel 
+python-dotenv 
+numpy

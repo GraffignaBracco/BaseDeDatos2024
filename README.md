@@ -29,3 +29,17 @@ docker exec -it basededatos2024-db-1 psql -U postgres -d gtfs
 
 Para debuguear si hay algún error
 docker logs basededatos2024-db-1
+
+## 1° Paso: Clonar el repositorio con GIT (Si todavía no lo tenían clonado, si ya lo hicieron en la clase, saltearse esto)
+
+### Abrir VS Code y poner "Clone Git Repository"
+
+![image.png](attachment:image.png)  
+
+### Luego copiar y pegar la URL del repósitorio `https://github.com/GraffignaBracco/BaseDeDatos2024.git` y seleccionar "Clone From URL"
+
+![image-2.png](attachment:image-2.png)
+
+### Seleccionar una carpeta donde se quiera descargar el repositorio
+
+

@@ -1,0 +1,1 @@
+{"agency_id": "int64", "agency_name": "str", "agency_url": "str", "agency_timezone": "str", "agency_lang": "str", "agency_phone": "float64"}

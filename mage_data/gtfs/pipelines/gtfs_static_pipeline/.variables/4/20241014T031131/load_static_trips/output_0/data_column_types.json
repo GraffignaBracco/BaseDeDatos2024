@@ -1,0 +1,1 @@
+{"route_id": "int64", "service_id": "int64", "trip_id": "str", "trip_headsign": "str", "trip_short_name": "str", "direction_id": "int64", "block_id": "str", "shape_id": "int64", "exceptional": "int64"}

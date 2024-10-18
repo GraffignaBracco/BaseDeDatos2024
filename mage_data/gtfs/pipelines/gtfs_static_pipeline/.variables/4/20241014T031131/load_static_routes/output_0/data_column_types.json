@@ -1,0 +1,1 @@
+{"route_id": "int64", "agency_id": "int64", "route_short_name": "str", "route_long_name": "str", "route_desc": "str", "route_type": "int64"}

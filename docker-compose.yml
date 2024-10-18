@@ -1,21 +1,48 @@
-version: '3.8'
-
 services:
-  db:
-    image: postgres
+  mage:
+    image: mageai/mageai:latest
+    command: mage start ${PROJECT_NAME}
+    env_file:
+      - .env
+    build:
+      context: .
+      dockerfile: Dockerfile
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: 1234
-      POSTGRES_DB: gtfs
-    volumes:
-      - ./data/feed-gtfs:/feed-gtfs
-      - ./inicializacion/gtfs_schema.sql:/docker-entrypoint-initdb.d/1-schema.sql
-      - ./load_gtfs_data.sql:/docker-entrypoint-initdb.d/2-load_data.sql
+      USER_CODE_PATH: /home/src/${PROJECT_NAME}
+      POSTGRES_DBNAME: ${POSTGRES_DBNAME}
+      POSTGRES_SCHEMA: ${POSTGRES_SCHEMA}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_HOST: ${POSTGRES_HOST}
+      POSTGRES_PORT: ${POSTGRES_PORT}
     ports:
-      - "5432:5432"
+      - 6789:6789
+    volumes:
+      - .:/home/src/
+    restart: on-failure:5
+    
     networks:
       - mynetwork
 
+  db:
+    image: postgres:17
+    restart: on-failure
+    container_name: ${PROJECT_NAME}-postgres
+    env_file:
+      - .env
+    environment:
+      POSTGRES_DB: ${POSTGRES_DBNAME}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    ports:
+      - "${POSTGRES_PORT}:5432"
+    
+    volumes:
+      - ./Data:/Data
+      
+    networks:
+      - mynetwork
+  
   pgadmin:
     image: dpage/pgadmin4
     environment:
@@ -29,19 +56,6 @@ services:
       - pgadmin_data:/var/lib/pgadmin
     networks:
       - mynetwork
-
-  mageai:
-    image: mageai/mageai:latest
-    depends_on:
-      - db
-    ports:
-      - "8501:8501" # Asumiendo que el servicio expone el puerto 8501, ajusta según necesites
-    networks:
-      - mynetwork
-    environment:
-      DATABASE_URL: "postgresql://postgres:1234@db/gtfs"
-    volumes:
-      - ./data/mageai:/data # Ajusta el volumen para almacenar o acceder a datos específicos si es necesario
 
 volumes:
   pgadmin_data:

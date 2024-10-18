@@ -1,0 +1,1 @@
+{"header_timestamp": "int64", "entity_id": "str", "vehicle_id": "str", "vehicle_label": "str", "current_stop_sequence": "int64", "stop_id": "str", "latitude": "float64", "longitude": "float64", "odometer": "float64", "speed": "float64", "timestamp": "int64", "trip_id": "str", "route_id": "str", "start_time": "str", "start_date": "str"}
