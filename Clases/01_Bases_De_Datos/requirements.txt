@@ -1,7 +1,0 @@
-jupyter
-ipykernel 
-python-dotenv 
-pandas
-numpy
-sqlalchemy 
-psycopg2-binary 
