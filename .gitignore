@@ -163,3 +163,5 @@ cython_debug/
 *.duckdb
 
 Data/feed-gtfs/*
+
+*.Zone.Identifier
