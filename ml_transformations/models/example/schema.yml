@@ -1,0 +1,52 @@
+
+version: 2
+sources:
+  - name: laptop
+    schema: laptop
+    tables:
+      - name: search
+        description: "Información cruda sobre las búsquedas realizadas para laptops proveniente de la API de Mercado Libre."
+      - name: search__attributes
+        description: "Atributos adicionales asociados a las búsquedas de laptops, provenientes de la API de Mercado Libre."
+      - name: seller
+        description: "Información sobre los vendedores de laptops obtenida de la API de Mercado Libre."
+
+  - name: mini_pc
+    schema: mini_pc
+    tables:
+      - name: search
+        description: "Información cruda sobre las búsquedas realizadas para mini PCs proveniente de la API de Mercado Libre."
+      - name: search__attributes
+        description: "Atributos adicionales asociados a las búsquedas de mini PCs, provenientes de la API de Mercado Libre."
+      - name: seller
+        description: "Información sobre los vendedores de mini PCs obtenida de la API de Mercado Libre."
+
+  - name: pc
+    schema: pc
+    tables:
+      - name: search
+        description: "Información cruda sobre las búsquedas realizadas para PCs proveniente de la API de Mercado Libre."
+      - name: search__attributes
+        description: "Atributos adicionales asociados a las búsquedas de PCs, provenientes de la API de Mercado Libre."
+      - name: seller
+        description: "Información sobre los vendedores de PCs obtenida de la API de Mercado Libre."
+
+models:
+  - name: my_first_dbt_model
+    description: "A starter dbt model"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null
+
+  - name: my_second_dbt_model
+    description: "A starter dbt model"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null
+
