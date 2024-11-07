@@ -1,0 +1,41 @@
+version: 2
+models:
+  - name: search
+    columns: 
+      - name: price
+
+  - name: seller
+    description: "Tabla que contiene información detallada sobre vendedores obtenida del endpoint de MercadoLibre /users/{user_id}"
+    columns:
+      - name: id
+        description: "Identificador único del vendedor en MercadoLibre."
+      - name: nickname
+        description: "Nombre público o apodo del vendedor en MercadoLibre."
+      - name: country_id
+        description: "Código de país donde se encuentra registrado el vendedor."
+      - name: address__city
+        description: "Ciudad asociada a la dirección principal del vendedor."
+      - name: address__state
+        description: "Estado o provincia asociada a la dirección principal del vendedor."
+      - name: user_type
+        description: "Tipo de usuario del vendedor, como 'brand' para marcas o 'normal' para usuarios comunes."
+      - name: site_id
+        description: "Código del sitio de MercadoLibre donde opera el vendedor, por ejemplo, MLA para Argentina."
+      - name: seller_reputation__level_id
+        description: "Nivel de reputación del vendedor, representado por colores o niveles que indican su historial y calidad de servicio."
+      - name: seller_reputation__power_seller_status
+        description: "Estado de vendedor con gran volumen de ventas, como 'platinum' para los vendedores destacados."
+      - name: seller_reputation__transactions__period
+        description: "Período sobre el cual se calcula la reputación del vendedor, generalmente es 'historic'."
+      - name: seller_reputation__transactions__total
+        description: "Número total de transacciones completadas por el vendedor."
+      - name: status__site_status
+        description: "Estado de actividad del vendedor en el sitio, como 'active' para los usuarios activos."
+      - name: _dlt_load_id
+        description: "Identificador de carga para el sistema DLT, utilizado para el control de versiones de datos."
+      - name: _dlt_id
+        description: "Identificador único de DLT para rastrear cada registro de la tabla."
+      - name: product_type
+        description: "Tipo de producto principal asociado a este vendedor, basado en sus publicaciones."
+
+
